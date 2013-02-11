@@ -2,7 +2,7 @@
 //  ViewController.m
 //  Heart Rate Monitor Test App
 //
-//  Created by Eric Franchomme on 1/29/13.
+//  Created by Eric Franchomme on 2/10/13.
 //  Copyright (c) 2013 Eric Franchomme. All rights reserved.
 //
 
