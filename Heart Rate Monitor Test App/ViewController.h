@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <CBPeripheralDelegate, CBCentralManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *hrLabel;
+@property (weak, nonatomic) IBOutlet UIButton *rescanButton;
+
+@property (readwrite, nonatomic) CBCentralManager *mgr;
+
+- (IBAction)scanPress:(id)sender;
+
 @end

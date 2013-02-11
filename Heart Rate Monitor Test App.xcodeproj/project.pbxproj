@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07945BFF16C9871800EE782B /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07945BFE16C9871800EE782B /* CoreBluetooth.framework */; };
 		07C5231816B85A5600A5D05C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C5231716B85A5600A5D05C /* UIKit.framework */; };
 		07C5231A16B85A5600A5D05C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C5231916B85A5600A5D05C /* Foundation.framework */; };
 		07C5231C16B85A5600A5D05C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C5231B16B85A5600A5D05C /* CoreGraphics.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07945BFE16C9871800EE782B /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		07C5231316B85A5600A5D05C /* Heart Rate Monitor Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Heart Rate Monitor Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C5231716B85A5600A5D05C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07C5231916B85A5600A5D05C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07945BFF16C9871800EE782B /* CoreBluetooth.framework in Frameworks */,
 				07C5231816B85A5600A5D05C /* UIKit.framework in Frameworks */,
 				07C5231A16B85A5600A5D05C /* Foundation.framework in Frameworks */,
 				07C5231C16B85A5600A5D05C /* CoreGraphics.framework in Frameworks */,
@@ -89,6 +92,7 @@
 		07C5230816B85A5600A5D05C = {
 			isa = PBXGroup;
 			children = (
+				07945BFE16C9871800EE782B /* CoreBluetooth.framework */,
 				07C5231D16B85A5600A5D05C /* Heart Rate Monitor Test App */,
 				07C5234416B85A5600A5D05C /* Heart Rate Monitor Test AppTests */,
 				07C5231616B85A5600A5D05C /* Frameworks */,
@@ -170,6 +174,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07C5234F16B85A5600A5D05C /* Build configuration list for PBXNativeTarget "Heart Rate Monitor Test App" */;
 			buildPhases = (
+				07945BFD16C9824A00EE782B /* ShellScript */,
 				07C5230F16B85A5600A5D05C /* Sources */,
 				07C5231016B85A5600A5D05C /* Frameworks */,
 				07C5231116B85A5600A5D05C /* Resources */,
@@ -254,6 +259,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07945BFD16C9824A00EE782B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((0x$bN))\nbN=$(($bN + 1))\nbN=$(printf \"%X\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
+		};
 		07C5233B16B85A5600A5D05C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,6 +479,7 @@
 				07C5235116B85A5600A5D05C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07C5235216B85A5600A5D05C /* Build configuration list for PBXNativeTarget "Heart Rate Monitor Test AppTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +488,7 @@
 				07C5235416B85A5600A5D05C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
